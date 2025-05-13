@@ -89,3 +89,10 @@ Finally, we'll complete the "add contact" feature, which will require everything
 You now have the basics of a contacts app - both frontend and backend - up and running! In our next workshop, we'll look at adding a database, and deploying our app.
 
 There are _so many ways_ you could extend this app if you so choose - we encourage you to experiment and make it your own!
+
+### Zoom recording link (Sun 11 May 2025)
+Please click [here](https://auckland.zoom.us/rec/share/7lYcQVCXsKqy1S18VhtQVsOQ9mf1PIv0UB5SV4rwiUwDsGZq2Qrc70w1XJJlgHsJ.jIlV-9q4OefIEysI) for the Zoom recording link.
+
+Unfortunately the recording was started a bit later in the workshop, and there may be a missing section after the break. 
+
+If you're following along from home, please refer to the gists or branches for each step (above) as you watch.  
