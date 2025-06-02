@@ -11,7 +11,7 @@ export default function App() {
         <ContactDisplay />
 
         {/* TODO Edit / Delete buttons section goes here */}
-        <section>
+        <section style={{ display: flex, gap: "1rem" }}>
           <button className="button">
             Edit
           </button>
