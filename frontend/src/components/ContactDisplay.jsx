@@ -1,7 +1,11 @@
 import { DEFAULT_IMAGE } from "../util/image-utils"
 
 // Creating a componenet for displaying the contact
-export default function ContactDisplay() {
+export default function ContactDisplay(props) {
+
+    const contact = props.contact;
+    console.log(contact);
+
     return (
         <section className="contact-display">
             <img src={DEFAULT_IMAGE} />
