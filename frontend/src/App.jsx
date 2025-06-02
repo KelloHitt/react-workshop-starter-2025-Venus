@@ -11,6 +11,14 @@ export default function App() {
         <ContactDisplay />
 
         {/* TODO Edit / Delete buttons section goes here */}
+        <section>
+          <button className="button">
+            Edit
+          </button>
+          <button className="button red">
+            Delete
+          </button>
+        </section>
       </main>
 
       {/* TODO Modal for adding new contacts */}
@@ -21,9 +29,9 @@ export default function App() {
 }
 
 
-/* Timestamp - 00:06:09
+/* Timestamp - 00:28:10
 
 jsx has similar syantx to html
 {} lets us insert javascript expressions in html code e.g. src={DEFAULT_IMAGE}
-In react to assign a class ot an elment use className instead of class
+In react to assign a class to an element use className instead of class
 */
