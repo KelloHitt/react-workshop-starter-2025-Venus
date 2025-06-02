@@ -4,14 +4,13 @@ import { DEFAULT_IMAGE } from "../util/image-utils"
 export default function ContactDisplay(props) {
 
     const contact = props.contact;
-    console.log(contact);
 
     return (
         <section className="contact-display">
-            <img src={DEFAULT_IMAGE} />
-            <h1>Contact names goes here</h1>
-            <h3>022 498 3644</h3>
-            <p>Fun fact goes here</p>
+            <img src={contact.photoUrl} />
+            <h1>{contact.name}</h1>
+            <h3>{contact.phoneNumber}</h3>
+            <p>Fun fact: {contact.funFact}</p>
         </section>
 
     )
