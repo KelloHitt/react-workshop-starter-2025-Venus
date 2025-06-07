@@ -8,12 +8,8 @@ import AddContactButton from "./AddContactButton";
  */
 export default function Sidebar({ contacts }) {
 
-    const contactListItems = [];
-    for (let i = 0; i < contacts.length; i++) {
-        contactListItems.push(
-            <ContactListItem key={contacts[i]._id} contact={contacts[i]} />
-        );
-    }
+
+
     return (
         <nav className="side-bar">
             {/* Search box */}
@@ -25,7 +21,9 @@ export default function Sidebar({ contacts }) {
             {/* List of contacts */}
             <section>
                 <ul>
-                    {contactListItems}
+                    {contacts.map((contact) => (
+                        <ContactListItem key={contact._id} contact={contact} />
+                    ))}
                 </ul>
             </section>
 
