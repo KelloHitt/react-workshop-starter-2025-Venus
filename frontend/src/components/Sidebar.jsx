@@ -7,6 +7,13 @@ import AddContactButton from "./AddContactButton";
  * The contacts list can be filtered by name.
  */
 export default function Sidebar({ contacts }) {
+
+    const contactListItems = [];
+    for (let i = 0; i < contacts.length; i++) {
+        contactListItems.push(
+            <ContactListItem key={contacts[i]._id} contact={contacts[i]} />
+        );
+    }
     return (
         <nav className="side-bar">
             {/* Search box */}
@@ -18,11 +25,7 @@ export default function Sidebar({ contacts }) {
             {/* List of contacts */}
             <section>
                 <ul>
-                    <ContactListItem contact={contacts[0]} />
-
-                    <ContactListItem contact={contacts[1]} />
-
-                    <ContactListItem contact={contacts[2]} />
+                    {contactListItems}
                 </ul>
             </section>
 
@@ -33,3 +36,13 @@ export default function Sidebar({ contacts }) {
         </nav>
     );
 }
+
+/* 
+for (let i = 0;  i < contacts.length; i++){
+    contactListItem.push(
+        <ContactListItem key={contacts[i]._id} contact={contacts[i]} /> 
+        );
+    } 
+    Need to give key for each contact as you React needs to uniquely identify which contact
+    associates with what "key" like an id
+*/
