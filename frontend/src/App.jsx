@@ -2,11 +2,12 @@ import ContactDisplay from "./components/ContactDisplay";
 import Sidebar from "./components/Sidebar";
 import { INITIAL_CONTACTS } from "./data/initial-contacts";
 
+
 export default function App() {
   return (
     <>
       {/* TODO Add sidebar here - contains contacts */}
-      <Sidebar />
+      <Sidebar contacts={INITIAL_CONTACTS} />
 
       <main className="main-area">
         {/* TODO Contact display goes here */}
@@ -31,7 +32,7 @@ export default function App() {
 }
 
 
-/* Timestamp - 00:28:10
+/* Timestamp - 00:56:31
 
 jsx has similar syantx to html
 {} lets us insert javascript expressions in html code e.g. src={DEFAULT_IMAGE}

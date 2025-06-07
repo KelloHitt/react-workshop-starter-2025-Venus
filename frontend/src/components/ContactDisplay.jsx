@@ -3,7 +3,7 @@ import { getPhotoUrl } from "../util/image-utils";
 // Creating a componenet for displaying the contact
 export default function ContactDisplay({ contact }) {
 
-    // object destructuring instead of having to repeatedly use contacts.photoUrl, contacts.funFact etc
+    // object destructuring in javascript instead of having to repeatedly use contacts.photoUrl, contacts.funFact etc
     const { name, phoneNumber, funFact, photoUrl } = contact;
 
     return (

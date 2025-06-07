@@ -6,7 +6,7 @@ import AddContactButton from "./AddContactButton";
  *
  * The contacts list can be filtered by name.
  */
-export default function Sidebar() {
+export default function Sidebar({ contacts }) {
     return (
         <nav className="side-bar">
             {/* Search box */}
@@ -18,11 +18,11 @@ export default function Sidebar() {
             {/* List of contacts */}
             <section>
                 <ul>
-                    <ContactListItem />
+                    <ContactListItem contact={contacts[0]} />
 
-                    <ContactListItem />
+                    <ContactListItem contact={contacts[1]} />
 
-                    <ContactListItem />
+                    <ContactListItem contact={contacts[2]} />
                 </ul>
             </section>
 
