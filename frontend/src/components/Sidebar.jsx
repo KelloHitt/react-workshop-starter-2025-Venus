@@ -6,9 +6,7 @@ import AddContactButton from "./AddContactButton";
  *
  * The contacts list can be filtered by name.
  */
-export default function Sidebar({ contacts }) {
-
-
+export default function Sidebar({ contacts, onContactClick }) {
 
     return (
         <nav className="side-bar">
@@ -22,7 +20,7 @@ export default function Sidebar({ contacts }) {
             <section>
                 <ul>
                     {contacts.map((contact) => (
-                        <ContactListItem key={contact._id} contact={contact} />
+                        <ContactListItem key={contact._id} contact={contact} onContactClick={onContactClick} />
                     ))}
                 </ul>
             </section>
