@@ -23,7 +23,7 @@ export default function Sidebar({ contacts, onContactClick, selectedContact }) {
                         <ContactListItem key={contact._id}
                             contact={contact}
                             onContactClick={onContactClick}
-                            isActive={contact._id == selectedContact._id}
+                            isActive={contact._id == selectedContact?._id}
                         />
                     ))}
                 </ul>
@@ -45,4 +45,10 @@ for (let i = 0;  i < contacts.length; i++){
     } 
     Need to give key for each contact as you React needs to uniquely identify which contact
     associates with what "key" like an id
+
+
+Using ? in selectedContact?._id is useful as
+if the selectedContact is not null the id is returned and if it is null, then inst
+ead of throwing an exception, undefined is returned. Avoids handling uncessary exception handling
+
 */
