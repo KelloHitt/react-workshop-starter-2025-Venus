@@ -9,8 +9,14 @@ export function useContacts() {
 
 export default function ContactsContextProvider({ children }) {
 
+    const [contacts, setContacts] = useState(INITIAL_CONTACTS);
+    const [selectedContact, setSelectedContact] = useState(INITIAL_CONTACTS[0]);
+
+    const context = {
+
+    }
     return (
-        <ContactsContext.Provider>
+        <ContactsContext.Provider value={context}>
             {children}
         </ContactsContext.Provider>
     )
