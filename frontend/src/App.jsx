@@ -36,9 +36,13 @@ export default function App() {
 }
 
 
-/* Timestamp - 01:27:17
+/* Timestamp - 01:28:11
 
 jsx has similar syantx to html
 {} lets us insert javascript expressions in html code e.g. src={DEFAULT_IMAGE}
 In react to assign a class to an element use className instead of class
+
+useState(INITIAL_CONTACTS[0]) it's only used to define the state at the beginning, not to control updates. 
+The updates happen later using the setSelectedContact (can be called anything)
+function when the user interacts with the UI.
 */
