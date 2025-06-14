@@ -1,25 +1,16 @@
 import ContactDisplay from "./components/ContactDisplay";
 import Sidebar from "./components/Sidebar";
-import { INITIAL_CONTACTS } from "./data/initial-contacts";
-import { useState } from "react";
-
 
 export default function App() {
-
-  // TODO Add state for the currently selected contact. setSelectedContact function changes state of the contact
-  const [selectedContact, setSelectedContact] = useState(INITIAL_CONTACTS[0]);
 
   return (
     <>
       {/* TODO Add sidebar here - contains contacts */}
-      <Sidebar contacts={INITIAL_CONTACTS}
-        onContactClick={setSelectedContact}
-        selectedContact={selectedContact}
-      />
+      <Sidebar />
 
       <main className="main-area">
         {/* TODO Contact display goes here */}
-        <ContactDisplay contact={selectedContact} />
+        <ContactDisplay />
 
         {/* TODO Edit / Delete buttons section goes here */}
         <section style={{ display: "flex", gap: "1rem" }}>
@@ -36,7 +27,7 @@ export default function App() {
 }
 
 
-/* Timestamp - 01:28:11
+/* Timestamp - 01:45:11
 
 jsx has similar syantx to html
 {} lets us insert javascript expressions in html code e.g. src={DEFAULT_IMAGE}

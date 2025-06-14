@@ -1,10 +1,14 @@
 import { getPhotoUrl } from "../util/image-utils";
+import { useContacts } from "../context/ContactsContextProvider";
 
 // Creating a componenet for displaying the contact
-export default function ContactDisplay({ contact }) {
+export default function ContactDisplay() {
+
+    const { selectedContact } = useContacts();
+
 
     // object destructuring in javascript instead of having to repeatedly use contacts.photoUrl, contacts.funFact etc
-    const { name, phoneNumber, funFact, photoUrl } = contact;
+    const { name, phoneNumber, funFact, photoUrl } = selectedContact;
 
     return (
         <section className="contact-display">
@@ -20,4 +24,5 @@ export default function ContactDisplay({ contact }) {
 Instead of having 
 export default function ContactDisplay(props) {const contact = props.contact; ...} to simplify the code 
 just use export default function ContactDisplay({contacts}) {...}
+
 */
