@@ -25,7 +25,7 @@ export default function Sidebar() {
                     {contacts.map((contact) => (
                         <ContactListItem key={contact._id}
                             contact={contact}
-                            onContactClick={onContactClick}
+                            onContactClick={setSelectedContact}
                             isActive={contact._id == selectedContact?._id}
                         />
                     ))}
