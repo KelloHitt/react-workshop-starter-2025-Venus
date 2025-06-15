@@ -1,6 +1,7 @@
 import ContactListItem from "./ContactListItem";
 import AddContactButton from "./AddContactButton";
 import { useContacts } from "../context/ContactsContextProvider";
+import { useState } from "react";
 
 /**
  * A sidebar with links to view each contact, or add new contacts.
@@ -9,20 +10,34 @@ import { useContacts } from "../context/ContactsContextProvider";
  */
 export default function Sidebar() {
 
+    const [searchTerm, setSearchTerm] = useState("");
     const { contacts, selectedContact, setSelectedContact } = useContacts();
+
+    function handleSearchChange(e) {
+        // Updating the searchTerm to be the value inputted by the user through onChange={handleSearchChange} in the input html tag for search bar
+        // e.target is the event that is changed by user's input in the search bar  
+        setSearchTerm(e.target.value);
+
+    }
+
+    // Filter contacts based on the search term
+    function isMatch(contact) {
+        return contact.name.toLowerCase().includes(searchTerm.toLowerCase());
+    }
+    const filteredContacts = contacts.filter(isMatch);
 
     return (
         <nav className="side-bar">
             {/* Search box */}
             <header>
                 <h2>Friends</h2>
-                <input type="text" />
+                <input type="text" value={searchTerm} onChange={handleSearchChange} />
             </header>
 
             {/* List of contacts */}
             <section>
                 <ul>
-                    {contacts.map((contact) => (
+                    {filteredContacts.map((contact) => (
                         <ContactListItem key={contact._id}
                             contact={contact}
                             onContactClick={setSelectedContact}

@@ -27,7 +27,7 @@ export default function App() {
 }
 
 
-/* Timestamp - 01:45:11
+/* Timestamp - 01:51:58
 
 jsx has similar syantx to html
 {} lets us insert javascript expressions in html code e.g. src={DEFAULT_IMAGE}
