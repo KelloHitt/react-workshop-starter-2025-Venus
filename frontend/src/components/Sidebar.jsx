@@ -21,9 +21,6 @@ export default function Sidebar() {
     }
 
     // Filter contacts based on the search term
-    function isMatch(contact) {
-        return contact.name.toLowerCase().includes(searchTerm.toLowerCase());
-    }
     const filteredContacts = contacts.filter((contact) =>
         contact.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
