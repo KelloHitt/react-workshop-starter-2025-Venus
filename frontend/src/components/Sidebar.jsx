@@ -24,7 +24,9 @@ export default function Sidebar() {
     function isMatch(contact) {
         return contact.name.toLowerCase().includes(searchTerm.toLowerCase());
     }
-    const filteredContacts = contacts.filter(isMatch);
+    const filteredContacts = contacts.filter((contact) =>
+        contact.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
 
     return (
         <nav className="side-bar">
