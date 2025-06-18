@@ -16,11 +16,21 @@ export default function ContactsContextProvider({ children }) {
     const [contacts, setContacts] = useState(INITIAL_CONTACTS);
     const [selectedContact, setSelectedContact] = useState(contacts[0]);
 
+    async function editContact(contact) {
+        console.log("Editing contact:", contact);
+    }
+
+    async function deleteContact(id) {
+        console.log("Deleting contact with id:", id);
+    }
+
     const context = {
         contacts,
         selectedContact,
         setSelectedContact,
-        setContacts
+        setContacts,
+        editContact,
+        deleteContact
 
     }
 

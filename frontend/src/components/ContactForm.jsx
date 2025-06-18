@@ -54,7 +54,7 @@ export default function ContactForm({ title, contact, onSubmit, hasDeleteButton,
                     id="phoneNumber"
                     placeholder="Phone number"
                     value={phoneNumber}
-                    onChange={(e) => setPhoneNumber(e.target.value)}
+                    onChange={(e) => setPhoneNumber(e.target.value)} // using in-line arrow function
                 />
             </div>
 

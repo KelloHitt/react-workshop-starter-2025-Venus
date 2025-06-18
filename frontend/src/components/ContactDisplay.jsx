@@ -9,6 +9,7 @@ export default function ContactDisplay() {
 
     // object destructuring in javascript instead of having to repeatedly use contacts.photoUrl, contacts.funFact etc
     const { name, phoneNumber, funFact, photoUrl } = selectedContact;
+    console.log("Final image URL:", getPhotoUrl(photoUrl));
 
     return (
         <section className="contact-display">

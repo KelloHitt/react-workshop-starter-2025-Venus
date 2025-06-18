@@ -1,7 +1,12 @@
 import ContactDisplay from "./components/ContactDisplay";
 import Sidebar from "./components/Sidebar";
+import { useState } from "react";
+import EditContactModel from "./components/EditContactModel";
+
 
 export default function App() {
+
+  const [isEditContactModalVisible, setEditContactModalVisible] = useState(false);
 
   return (
     <>
@@ -14,20 +19,23 @@ export default function App() {
 
         {/* TODO Edit / Delete buttons section goes here */}
         <section style={{ display: "flex", gap: "1rem" }}>
-          <button className="button">Edit</button>
+          <button className="button" onClick={() => setEditContactModalVisible(true)}>Edit</button>
           <button className="button red">Delete</button>
         </section>
       </main>
 
       {/* TODO Modal for adding new contacts */}
-
+      <EditContactModel
+        visible={isEditContactModalVisible}
+        onClose={() => setEditContactModalVisible(false)}
+      />
       {/* TODO Modal for editing existing contacts */}
     </>
   );
 }
 
 
-/* Timestamp - 01:51:58
+/* Timestamp - 02:22:22
 
 jsx has similar syantx to html
 {} lets us insert javascript expressions in html code e.g. src={DEFAULT_IMAGE}
