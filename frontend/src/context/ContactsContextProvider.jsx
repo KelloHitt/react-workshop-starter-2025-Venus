@@ -31,7 +31,6 @@ export default function ContactsContextProvider({ children }) {
         setContacts,
         editContact,
         deleteContact
-
     }
 
     // The value context is available to any descendant component (i.e child) that wants to access it which in this

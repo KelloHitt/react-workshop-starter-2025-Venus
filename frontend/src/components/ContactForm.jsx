@@ -7,6 +7,8 @@ export default function ContactForm({ title, contact, onSubmit, hasDeleteButton,
     const [name, setName] = useState(contact?.name ?? "");
     const [phoneNumber, setPhoneNumber] = useState(contact?.phoneNumber ?? "");
     const [photoUrl, setPhotoUrl] = useState(contact?.photoUrl ?? "");
+    // contact? means that if contact is not null or undefined, then access contact.funFact otherwise return undefined
+    // If contact?.funFact ?? "" is null or undefined, use "" (empty string) instead
     const [funFact, setFunFact] = useState(contact?.funFact ?? "");
 
     // Whenever the contact prop changes, update the bound inputs to match.
@@ -81,3 +83,17 @@ export default function ContactForm({ title, contact, onSubmit, hasDeleteButton,
         </form>
     );
 }
+
+
+/*
+1. contact = null
+- contact?.funFact → undefined (because contact is null, so optional chaining returns undefined instead of throwing an error)
+- undefined ?? "" → ""
+► Final result: ""
+
+2. contact = { funFact: undefined }
+- contact?.funFact → undefined
+- undefined ?? "" → ""
+► Final result: ""
+
+*/
