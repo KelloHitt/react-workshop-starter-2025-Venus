@@ -6,6 +6,8 @@ export default function ContactDisplay() {
 
     const { selectedContact } = useContacts();
 
+    if (!selectedContact) return <p>No contact selected</p>;
+
 
     // object destructuring in javascript instead of having to repeatedly use contacts.photoUrl, contacts.funFact etc
     const { name, phoneNumber, funFact, photoUrl } = selectedContact;

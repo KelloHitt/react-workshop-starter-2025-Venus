@@ -5,3 +5,4 @@ export async function retrieveContacts() {
     const data = await response.json(); // Grabs the json data from response variable
     return data;
 }
+

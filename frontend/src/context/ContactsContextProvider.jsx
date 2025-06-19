@@ -1,5 +1,5 @@
 import { useState, createContext, useContext } from "react";
-import { INITIAL_CONTACTS } from "../data/initial-contacts";
+import { retrieveContacts } from "../api/api";
 
 // Creating a context object to set up a place where data is going to be stored
 // createContext() is run once when the module is loaded at app startup,
@@ -13,8 +13,15 @@ export function useContacts() {
 
 export default function ContactsContextProvider({ children }) {
 
-    const [contacts, setContacts] = useState(INITIAL_CONTACTS);
-    const [selectedContact, setSelectedContact] = useState(contacts[0]);
+    const [contacts, setContacts] = useState([]);
+    const [selectedContact, setSelectedContact] = useState(null);
+
+    async function fetchContacts() {
+        const data = await retrieveContacts();
+        console.log("Fetched contacts:", data);
+    }
+
+    fetchContacts();
 
     async function editContact(contact) {
         console.log("Editing contact:", contact);
