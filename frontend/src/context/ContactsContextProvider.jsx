@@ -1,4 +1,4 @@
-import { useState, createContext, useContext } from "react";
+import { useState, createContext, useContext, useEffect } from "react";
 import { retrieveContacts } from "../api/api";
 
 // Creating a context object to set up a place where data is going to be stored
@@ -19,9 +19,16 @@ export default function ContactsContextProvider({ children }) {
     async function fetchContacts() {
         const data = await retrieveContacts();
         console.log("Fetched contacts:", data);
+        setContacts(data);
+        setSelectedContact(data[0]);
     }
 
-    fetchContacts();
+    // MAKE GIT COMMIT ON THIS FUNCTION
+    useEffect(() => {
+        fetchContacts();
+    }, []); // This function will run everytime the component re-renders only if the values in the array has changed
+
+
 
     async function editContact(contact) {
         console.log("Editing contact:", contact);
